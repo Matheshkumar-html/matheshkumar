@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎂 The Birthday Chronicle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cardo', serif;
+      background: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    h2 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 2.8em;
+      margin-bottom: 0.5em;
+      text-shadow: 0 0 10px #fffa;
+    }
+
+    p {
+      max-width: 800px;
+      font-size: 1.3em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(3px);
+      line-height: 1.7em;
+    }
+
+    .magic-text span {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .magic-text span:nth-child(n) {
+      animation-delay: calc(0.04s * var(--i));
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .star-background {
+      background: radial-gradient(ellipse at center, #1b1b2f, #000);
+    }
+  </style>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/16/audio_7a61a32b3d.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SweetAlert name input -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  window.onload = async () => {
+    const { value: name } = await Swal.fire({
+      title: "🌠 A Star is Born...",
+      html: `<p style="font-size: 1.2em;">Speak your name, and let the Chronicle begin...</p>`,
+      input: "text",
+      inputPlaceholder: "What shall we call you?",
+      confirmButtonText: "✨ Begin My Tale ✨",
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("https://i.imgur.com/Qm5FQZQ.gif")
+        center top
+        no-repeat
+      `,
+      background: '#000',
+      color: '#ffe',
+      confirmButtonColor: '#c770f0',
+    });
+
+    if (name) {
+      document.querySelectorAll('.nameDisplay').forEach(el => el.textContent = name);
+      speak(`Happy birthday, ${name}. Let the story unfold.`);
+    }
+  };
+
+  function speak(text) {
+    if ('speechSynthesis' in window) {
+      const msg = new SpeechSynthesisUtterance(text);
+      msg.pitch = 1.2;
+      msg.rate = 0.9;
+      msg.lang = 'en-GB';
+      window.speechSynthesis.speak(msg);
+    }
+  }
+</script>
+
+<!-- Page 1 -->
+<section style="background-image: url('bday pic2.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🎇 A Star is Born</h2>
+  <p>
+    In the great cosmic sea, a single spark burst forth. That light... was <strong class="nameDisplay">you</strong>.
+  </p>
+</section>
+<!-- Page 2 -->
+<section style="background-image: url('baby girl.jpeg'); background-repeat: no-repeat; background-position: center; background-size: cover;">>
+  <h2>📜 The Tale Begins</h2>
+  <p class="magic-text">
+    <span style="--i:1;">O</span><span style="--i:2;">n</span><span style="--i:3;">c</span><span style="--i:4;">e</span>
+    <span style="--i:5;">u</span><span style="--i:6;">p</span><span style="--i:7;">o</span><span style="--i:8;">n</span>
+    <span style="--i:9;">a</span><span style="--i:10;">s</span><span style="--i:11;">t</span><span style="--i:12;">a</span><span style="--i:13;">r</span><span style="--i:14;">...</span>
+    <br><br>
+    The heavens whispered, “A destiny unfolds tonight...” and thus began the journey of <strong class="nameDisplay">you</strong>.
+  </p>
+</section>
+
+<!-- Page 3 -->
+<section style="background: url('teddy.jpeg') no-repeat center / cover;">
+  <h2>🔮 The Ancient Oracle</h2>
+  <p>
+    In the mountains of time, an oracle once saw your birth in the stars. 
+    "This child," they proclaimed, "will bring laughter to the weeping, and courage to the unsure..."
+    <br><br>
+    Their name was <strong class="nameDisplay">you</strong>, written in constellations.
+  </p>
+</section>
+
+<section style="background-image: url('path of lights.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🌠 The Path of Light</h2>
+
+  <p>
+    From the moment <strong class="nameDisplay">you</strong> took your first breath, a glow followed your every step.
+    The universe gifted you with a heart that listens, a mind that wonders, and a spirit that shines.
+    <br><br>
+    In every corner you walk, shadows retreat. In every soul you touch, hope stirs.
+    <strong class="nameDisplay">You</strong> are a bearer of light — not because you try, but because it’s who you are.
+    <br><br>
+    Where others see obstacles, you see opportunity. Where fear lives, you bring calm.
+    The path you walk is not always easy... but it is bright, noble, and uniquely yours.
+  </p>
+</section>
+<section style="background-image: url('trial.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>⚔️ Trials & Triumphs</h2>
+  <p>
+    Life, as with all great legends, offered its share of storms.
+    <strong class="nameDisplay">You</strong> faced them—not with fear, but with fierce determination.
+    <br><br>
+    There were days when the sky grew heavy and the winds howled loud,
+    but even then, your spirit stood unshaken.
+    Every tear became a pearl of wisdom. Every fall, a lesson. Every scar, a badge of honor.
+    <br><br>
+    Through uncertainty, <strong class="nameDisplay">you</strong> walked with quiet strength.
+    You did not merely survive—you evolved, rising like a phoenix with every trial.
+    <br><br>
+    And now, here you are: not just older, but braver. Not just wiser, but radiant.
+    For every challenge you faced, the world was gifted a stronger you.
+  </p>
+</section>
+<section style="background-image: url('friends.webp'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🧙‍♂️ Companions of Destiny</h2>
+  <p>
+    No hero walks alone, and neither did <strong class="nameDisplay">you</strong>.
+    Through forests of joy and storms of sorrow, loyal hearts walked beside you—
+    your companions of destiny.
+    <br><br>
+    Some wore cloaks of laughter, casting spells of joy on the darkest days.
+    Others bore shields of wisdom, guiding you when the path seemed lost.
+    A few simply held your hand—no magic, just love.
+    <br><br>
+    These were not just friends or family… they were kindred spirits chosen by the stars.
+    Together, you formed a fellowship stronger than fate itself.
+    <br><br>
+    And even now, they gather—across time and space—to celebrate <strong class="nameDisplay">you</strong>,
+    the lightbearer, the dreamer, the one who never gave up.
+  </p>
+</section>
+<section style="background-image: url('acting.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🪞 The Mirror of Wishes</h2>
+  <p>
+    Deep within the Temple of Dreams lies the Mirror of Wishes — a sacred glass that reveals the longing of one true heart.
+    <br><br>
+    As <strong class="nameDisplay">you</strong> gaze into its shimmer, the stars fall silent.
+    The winds pause, listening. The world leans closer.
+    <br><br>
+    Close your eyes now. Make your wish.
+    Let it rise from your soul like stardust on the wind.
+    For in this moment, the universe is yours — and the wish of <strong class="nameDisplay">you</strong> echoes across eternity.
+  </p>
+</section>
+<section style="background-image: url('pp.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>⏳ The Festival of Time</h2>
+  <p>
+    Each year, the sky lights up for a single night — The Festival of Time — to honor the journey of a soul becoming.
+    <br><br>
+    🍼 Year 1: The first laugh. The first sparkle.<br>
+    🧒 Year 5: Wonder and wild tales bloom.<br>
+    📚 Year 10: Curiosity becomes wisdom.<br>
+    💫 Year 15: Dreams stretch toward the stars.<br>
+    🌟 Year 21: <strong class="nameDisplay">you</strong> stand radiant — wiser, braver, more magical than ever.
+    <br><br>
+    Let the bells of time ring! For each moment lived has shaped a legend in the making.
+  </p>
+</section>
+<section style="background-image: url('gifts.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🎁 The Gift of Stars</h2>
+  <p>
+    On this day, the cosmos delivers a gift not wrapped in ribbon, but in verse.
+    A celestial poem for <strong class="nameDisplay">you</strong>:
+    <br><br>
+    <em>
+    You are the spark that stirs the skies,<br>
+    A whisper kind, where courage lies.<br>
+    A firefly in shadow’s grip,<br>
+    A guiding star on every trip.<br>
+    <br>
+    So dance, dear soul, and claim your light,<br>
+    For you were born to blaze the night.<br>
+    On wings of joy, now rise and soar—<br>
+    The world is yours forevermore.
+    </em>
+    <br><br>
+    🌠 Happy Birthday, <strong class="nameDisplay">you</strong>.
+  </p>
+</section>
+<section style="background-image: url('nvg.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2>🔮 To Be Continued...</h2>
+  <p>
+    And so the tale reaches this page — not the end, but a pause.
+    For destiny writes in seasons, and the next chapter is waiting, hidden in the stars.
+    <br><br>
+    Where will you go? What mysteries await? Only time will tell.
+    <br><br>
+    But remember this, always:
+    <strong class="nameDisplay">you</strong> are the author of this story — and your magic has just begun.
+    <br><br>
+    Until next year... when the Chronicle awakens once more.
+  </p>
+</section>
+<section style="background-image: url('end1.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+
+  <p style="margin-top: 20px; font-size: 1.3em;">Once again, I wish you a happy birthday!</p>
+</section>
+
